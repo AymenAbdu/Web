@@ -1,0 +1,121 @@
+/* LUXURY Watches & Phones - تصميم المتجر */
+:root {
+  --ink: #171717;
+  --gold: #b69045;
+  --cream: #f7f4ed;
+  --paper: #ffffff;
+  --line: #e4ddcf;
+  --muted: #69645d;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: auto; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+  font-family: Tahoma, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.8;
+}
+a { text-decoration: none; }
+main { flex: 1; }
+.container { width: min(1100px, 92%); max-width: none; margin: 0 auto; padding: 0; }
+
+/* الترويسة والقائمة */
+.site-header { background: var(--ink); border-top: 5px solid var(--gold); }
+.header-inner { width: min(1100px, 92%); margin: auto; padding: 18px 0; }
+.brand-name { margin: 0; color: #e8c887; font: 800 2rem Arial, sans-serif; letter-spacing: 4px; text-align: right; }
+.main-nav { background: var(--paper); border-bottom: 1px solid var(--line); }
+.main-nav ul { width: min(1100px, 92%); margin: auto; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 4px 24px; }
+.main-nav a { display: block; padding: 12px 2px 9px; border-bottom: 3px solid transparent; color: var(--ink); font-weight: 700; }
+.main-nav a:hover, .main-nav a.active { color: #87651d; border-color: var(--gold); }
+.site-footer { width: 100%; margin-top: 34px; padding: 16px 0; color: #e8c887; background: var(--ink); text-align: center; border-top: 3px solid var(--gold); }
+.site-footer p { margin: 0; font-weight: 800; letter-spacing: 3px; }
+
+/* العناوين والكتل العامة */
+.page-title { margin: 34px 0 28px; padding: 0 18px 0 0; border-right: 4px solid var(--gold); }
+.page-title h2 { margin: 0 0 5px; font-size: 2rem; font-weight: 800; }
+.page-title p { margin: 0; color: var(--muted); }
+.section-card { padding: 28px; background: var(--paper); border: 1px solid var(--line); }
+.section-card h3, .tip-box h3 { margin: 0 0 14px; font-size: 1.35rem; }
+.section-card h4 { font-size: 1.1rem; margin-top: 18px; }
+.tip-box { padding: 26px; background: var(--ink); color: #f3e9d3; border-top: 4px solid var(--gold); }
+.tip-box h3 { color: #e8c887; }
+.section-card p, .tip-box p { margin-bottom: 12px; }
+.btn-dark, .btn-outline-dark:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+.btn-outline-dark { color: var(--ink); border-color: var(--gold); }
+.btn-dark:hover, .btn-outline-dark:focus { background: #75591e; border-color: #75591e; color: #fff; }
+.btn-light { color: var(--ink); background: #e8c887; border-color: #e8c887; }
+
+/* الرئيسية - السلايدر في الوسط ثم النص */
+.home-page .slider-wrap { width: min(980px, 100%); margin: 30px auto 0; overflow: hidden; border: 5px solid var(--paper); background: var(--ink); }
+#wowslider-container1 { position: relative; width: 100% !important; max-width: none !important; margin: 0 auto !important; }
+.home-page .page-title { margin: 20px auto 28px; padding: 0; max-width: 720px; text-align: center; border-right: 0; }
+.home-page .page-title h2 { font-size: 2.3rem; }
+.home-page .home-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 18px; align-items: stretch; }
+.home-page .section-card { border-top: 4px solid var(--gold); }
+.home-page .tip-box { display: flex; flex-direction: column; justify-content: center; }
+
+/* المنتجات: بطاقات عمودية مع تفاصيل تظهر بالمرور */
+.products-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.product-card { position: relative; overflow: hidden; min-width: 0; background: var(--paper); border: 1px solid var(--line); border-bottom: 4px solid var(--gold); }
+.product-card > img { display: block; width: 100%; height: 275px; padding: 18px; object-fit: contain; background: #f1efea; }
+.product-info { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 14px 16px; }
+.product-info h3 { margin: 0; font-size: 1rem; font-weight: 700; }
+.price { margin: 0; padding: 2px 8px; white-space: nowrap; color: #6d4e13; background: #f7edd6; font-weight: 800; }
+.hover-details { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 24px; color: #fff; background: rgba(19,19,19,.96); opacity: 0; visibility: hidden; }
+.product-card:hover .hover-details, .product-card:focus-within .hover-details, .product-card:focus .hover-details { opacity: 1; visibility: visible; }
+.hover-details h4 { margin: 0 0 12px; color: #e8c887; }
+.hover-details ul { padding-right: 20px; margin: 0 0 16px; }
+.hover-details li { margin-bottom: 4px; }
+.hover-details .btn { align-self: flex-start; }
+.product-card:focus { outline: 2px solid var(--gold); }
+
+/* من نحن: صندوق جانبي وجدول أقسام */
+.about-layout { display: grid; grid-template-columns: 1fr 2fr; align-items: start; gap: 18px; }
+.about-layout .tip-box { min-height: 230px; }
+.simple-list { margin: 0 0 18px; padding-right: 20px; }
+.info-table { width: 100%; margin: 16px 0 0; border-collapse: collapse; }
+.info-table th, .info-table td { padding: 12px; border-bottom: 1px solid var(--line); text-align: right; }
+.info-table th { background: var(--ink); color: #e8c887; }
+.info-table tr:nth-child(even) td { background: var(--cream); }
+
+/* تواصل معنا: النموذج وبيانات التواصل */
+.contact-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 20px; align-items: stretch; }
+.contact-grid .section-card:last-child { background: var(--ink); color: #fff; border-top: 4px solid var(--gold); }
+.contact-grid .section-card:last-child h3 { color: #e8c887; }
+.contact-list { padding: 0; margin: 0; list-style: none; }
+.contact-list li { padding: 13px 0; border-bottom: 1px solid #484134; overflow-wrap: anywhere; }
+.contact-list i { width: 27px; color: #e8c887; }
+
+/* تسجيل الدخول وإنشاء حساب */
+.form-card { width: min(530px, 100%); margin: 0 auto; padding: 34px; background: var(--paper); border-right: 5px solid var(--gold); }
+.login-page .page-title, .register-page .page-title { max-width: 530px; margin: 38px auto 20px; border: 0; padding: 0; text-align: center; }
+.form-label { font-weight: 700; }
+.form-control { border: 1px solid #cfc7b9; border-radius: 0; background: #fdfcf9; }
+.form-control:focus { border-color: var(--gold); box-shadow: 0 0 0 2px #b6904526; }
+.form-card .btn, .contact-grid form .btn { min-width: 155px; border-radius: 0; }
+.register-page .form-card { width: min(710px, 100%); }
+.register-page .form-card form { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+.register-page .form-card form .btn { grid-column: 1 / -1; justify-self: start; }
+.register-page .page-title { max-width: 710px; }
+
+/* التكيف مع شاشة الهاتف */
+@media (max-width: 850px) {
+  .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .about-layout, .contact-grid, .home-page .home-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .brand-name { font-size: 1.65rem; }
+  .main-nav ul { gap: 0 14px; }
+  .main-nav a { padding: 9px 0 6px; font-size: .86rem; }
+  .page-title h2, .home-page .page-title h2 { font-size: 1.6rem; }
+  .products-grid { grid-template-columns: 1fr; }
+  .section-card, .tip-box, .form-card { padding: 20px; }
+  .register-page .form-card form { grid-template-columns: 1fr; }
+  .product-card > img { height: 300px; }
+}
